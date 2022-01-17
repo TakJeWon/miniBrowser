@@ -5,5 +5,5 @@
 + 사용 : storyboard, objective-C
 + 버전 : Xcode 13.2.1
 
-<img width="80%" src="https://user-images.githubusercontent.com/94026712/149740318-0c83ee54-26fe-4d7c-9bd3-c26273afbb11.pngf"/>
+<img width="80%" src="https://user-images.githubusercontent.com/94026712/149740318-0c83ee54-26fe-4d7c-9bd3-c26273afbb11.png"/>
 
