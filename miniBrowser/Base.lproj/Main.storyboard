@@ -1,24 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IyE-jj-xnN">
+                                <rect key="frame" x="0.0" y="163" width="414" height="655"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="655" id="sYH-mI-3te"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pHo-JY-5ts">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                                <color key="tintColor" name="AccentColor"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yxD-bk-EEH">
+                                <rect key="frame" x="20" y="64" width="374" height="32"/>
+                                <segments>
+                                    <segment title="facebook"/>
+                                    <segment title="twitter"/>
+                                    <segment title="apple"/>
+                                    <segment title="google"/>
+                                </segments>
+                                <connections>
+                                    <action selector="bookmarkAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="x53-Tj-hcF"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xe3-0W-kKl">
+                                <rect key="frame" x="20" y="105" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="M8J-Sy-a4L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="URL" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VgM-6v-PCE"/>
+                                </connections>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBj-IQ-p8R">
+                                <rect key="frame" x="0.0" y="774" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Mz7-fQ-LwJ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="rewind" id="CPT-aX-Qkq">
+                                        <connections>
+                                            <action selector="backAction:" destination="BYZ-38-t0r" id="3fq-XV-Zvl"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8BF-86-xcb"/>
+                                    <barButtonItem systemItem="fastForward" id="kDT-8x-Dgv">
+                                        <connections>
+                                            <action selector="forwardAction:" destination="BYZ-38-t0r" id="RCi-Ju-7e3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="oUV-8F-1kT"/>
+                                    <barButtonItem systemItem="stop" id="aZI-cG-ehK">
+                                        <connections>
+                                            <action selector="stopAction:" destination="BYZ-38-t0r" id="fET-Ug-lVu"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bIh-pG-fAt"/>
+                                    <barButtonItem systemItem="refresh" id="Zzx-z9-nP6">
+                                        <connections>
+                                            <action selector="refreshAction:" destination="BYZ-38-t0r" id="zKy-zb-ndZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yxD-bk-EEH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="10R-sq-eYj"/>
+                            <constraint firstItem="cBj-IQ-p8R" firstAttribute="leading" secondItem="IyE-jj-xnN" secondAttribute="leading" id="8af-FX-cYx"/>
+                            <constraint firstItem="cBj-IQ-p8R" firstAttribute="top" secondItem="IyE-jj-xnN" secondAttribute="bottom" constant="-44" id="Nfh-pa-pZQ"/>
+                            <constraint firstItem="cBj-IQ-p8R" firstAttribute="trailing" secondItem="IyE-jj-xnN" secondAttribute="trailing" id="OVK-uE-4cC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yxD-bk-EEH" secondAttribute="trailing" constant="20" id="PJl-i9-AyK"/>
+                            <constraint firstItem="IyE-jj-xnN" firstAttribute="top" secondItem="xe3-0W-kKl" secondAttribute="bottom" constant="8" symbolic="YES" id="Rxg-q4-VV6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xe3-0W-kKl" secondAttribute="trailing" constant="20" id="cDh-vS-CBK"/>
+                            <constraint firstItem="IyE-jj-xnN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eqd-DP-0Rf"/>
+                            <constraint firstItem="xe3-0W-kKl" firstAttribute="top" secondItem="yxD-bk-EEH" secondAttribute="bottom" constant="10" id="fcT-4z-ppE"/>
+                            <constraint firstItem="pHo-JY-5ts" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="icG-Gr-vRB"/>
+                            <constraint firstItem="IyE-jj-xnN" firstAttribute="centerX" secondItem="xe3-0W-kKl" secondAttribute="centerX" id="lkd-uN-Q0S"/>
+                            <constraint firstItem="pHo-JY-5ts" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vxF-Vb-UbF"/>
+                            <constraint firstItem="xe3-0W-kKl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wPI-fe-Jgv"/>
+                            <constraint firstItem="yxD-bk-EEH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ypb-Ne-nDP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="pHo-JY-5ts" id="Tzw-qV-hcX"/>
+                        <outlet property="bookMarkSegmentedControl" destination="yxD-bk-EEH" id="b3d-RH-nLP"/>
+                        <outlet property="urlTextField" destination="xe3-0W-kKl" id="p6n-qj-xYR"/>
+                        <outlet property="wkwebView" destination="IyE-jj-xnN" id="AjF-BY-3Z5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
