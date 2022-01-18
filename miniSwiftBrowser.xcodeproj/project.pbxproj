@@ -13,6 +13,7 @@
 		38B798192796465C00DDA684 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B798172796465C00DDA684 /* Main.storyboard */; };
 		38B7981B2796465D00DDA684 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38B7981A2796465D00DDA684 /* Assets.xcassets */; };
 		38B7981E2796465D00DDA684 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38B7981C2796465D00DDA684 /* LaunchScreen.storyboard */; };
+		38B798272796556700DDA684 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38B798262796556700DDA684 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		38B7981A2796465D00DDA684 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38B7981D2796465D00DDA684 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38B7981F2796465D00DDA684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38B798262796556700DDA684 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38B798272796556700DDA684 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +45,7 @@
 			children = (
 				38B798102796465C00DDA684 /* miniSwiftBrowser */,
 				38B7980F2796465C00DDA684 /* Products */,
+				38B798252796556700DDA684 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +69,14 @@
 				38B7981F2796465D00DDA684 /* Info.plist */,
 			);
 			path = miniSwiftBrowser;
+			sourceTree = "<group>";
+		};
+		38B798252796556700DDA684 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38B798262796556700DDA684 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
